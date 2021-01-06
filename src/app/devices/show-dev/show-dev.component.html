@@ -1,0 +1,30 @@
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary float-right m-2" 
+data-toggle="modal" data-target="#exampleModal"
+(click)="addClick()" data-backdrop="static" data-keyboard="false"
+>
+    Refresh
+  </button>
+ 
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Device Id</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let dataItem of DeviceList">
+            <td>{{dataItem.deviceId}}</td>
+            <td>{{dataItem.status}}</td>
+            <td>
+                <button type="button" class="btn btn-light mr-1"
+                data-toggle="modal" data-target="#exampleModal"
+                (click)="assignDeviceClick(dataItem)" data-backdrop="static" data-keyboard="false"
+                >
+                    Assign Device
+                </button>
+            </td>
+        </tr>
+    </tbody>
+</table>
